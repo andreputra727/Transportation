@@ -1,0 +1,35 @@
+package praktic.inheritance.mains;
+
+import praktic.inheritance.transportation.Bus;
+import praktic.inheritance.transportation.Taxi;
+import praktic.inheritance.transportation.Train;
+
+public class main {
+    public static void main(String[] args) {
+        Bus bus = new Bus("Bus Juragan99", 50, "Terminal Jakarta - Terminal Malang");
+        bus.startJourney();
+        bus.boardPassengers(50);
+        bus.boardPassengers(30);
+        bus.calculateFare(6);
+        bus.stopJourney();
+        bus.dropPassengers(60);
+
+        System.out.println("\n----------------------------------------------------------\n");
+
+        Train train = new Train("Kereta whoosh", 300, "Stasiun Jakarta - Stasiun Bandung");
+        train.startJourney();
+        train.boardPassengers(200);
+        train.calculateFare();
+        train.stopJourney();
+        train.dropPassengers(100);
+
+        System.out.println("\n----------------------------------------------------------\n");
+
+        Taxi taxi = new Taxi("Taksi Grab", 6, "Stasuin - Terminal");
+        taxi.startJourney();
+        taxi.boardPassengers(6);
+        taxi.calculateFare(12);
+        taxi.stopJourney();
+        taxi.dropPassengers(3);
+    }
+}
