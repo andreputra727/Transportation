@@ -1,35 +1,41 @@
 package praktic.inheritance.mains;
 
+// Mengimpor class-class turunan dari Vehicle
 import praktic.inheritance.transportation.Bus;
 import praktic.inheritance.transportation.Taxi;
 import praktic.inheritance.transportation.Train;
 
+// Kelas utama untuk menjalankan program
 public class main {
     public static void main(String[] args) {
+        
+        // Membuat objek Bus dan menjalankan proses perjalanan
         Bus bus = new Bus("Bus Juragan99", 50, "Terminal Jakarta - Terminal Malang");
-        bus.startJourney();
-        bus.boardPassengers(50);
-        bus.boardPassengers(30);
-        bus.calculateFare(6);
-        bus.stopJourney();
-        bus.dropPassengers(60);
+        bus.startJourney();                       // Memulai perjalanan
+        bus.boardPassengers(50);                  // Menampung 50 penumpang (sesuai kapasitas)
+        bus.boardPassengers(30);                  // Melebihi kapasitas, akan ditolak
+        bus.calculateFare(6);                     // Hitung tarif berdasarkan 6 halte
+        bus.stopJourney();                        // Mengakhiri perjalanan
+        bus.dropPassengers(60);                   // Melebihi jumlah penumpang, akan ditolak
 
         System.out.println("\n----------------------------------------------------------\n");
 
+        // Membuat objek Train dan menjalankan proses perjalanan
         Train train = new Train("Kereta whoosh", 300, "Stasiun Jakarta - Stasiun Bandung");
-        train.startJourney();
-        train.boardPassengers(200);
-        train.calculateFare();
-        train.stopJourney();
-        train.dropPassengers(100);
+        train.startJourney();                     // Memulai perjalanan
+        train.boardPassengers(200);               // Menampung 200 penumpang
+        train.calculateFare();                    // Hitung tarif tetap
+        train.stopJourney();                      // Mengakhiri perjalanan
+        train.dropPassengers(100);                // Menurunkan 100 penumpang
 
         System.out.println("\n----------------------------------------------------------\n");
 
-        Taxi taxi = new Taxi("Taksi Grab", 6, "Stasuin - Terminal");
-        taxi.startJourney();
-        taxi.boardPassengers(6);
-        taxi.calculateFare(12);
-        taxi.stopJourney();
-        taxi.dropPassengers(3);
+        // Membuat objek Taxi dan menjalankan proses perjalanan
+        Taxi taxi = new Taxi("Taksi Grab", 6, "Stasiun - Terminal");
+        taxi.startJourney();                      // Memulai perjalanan
+        taxi.boardPassengers(6);                  // Menampung 6 penumpang (penuh)
+        taxi.calculateFare(12);                   // Hitung tarif berdasarkan 12 km
+        taxi.stopJourney();                       // Mengakhiri perjalanan
+        taxi.dropPassengers(3);                   // Menurunkan 3 penumpang
     }
 }
