@@ -1,14 +1,21 @@
 package praktic.inheritance.transportation;
 
+// Kelas Taxi merupakan turunan dari kelas Vehicle
 public class Taxi extends Vehicle {
+    // Tarif per kilometer untuk perjalanan taksi
     private static final int FARE_PER_KM = 6000;
 
+    // Konstruktor untuk menginisialisasi objek Taxi
     public Taxi(String name, int capacity, String route) {
-        super(name, capacity, route);
+        super(name, capacity, route); // Memanggil konstruktor dari kelas induk (Vehicle)
     }
 
+    // Method khusus untuk menghitung tarif berdasarkan jarak tempuh (dalam km)
     public void calculateFare(int distance) {
+        // Menghitung total tarif berdasarkan jumlah penumpang, tarif per km, dan jarak
         int totalFare = getCurrentPassenger() * FARE_PER_KM * distance;
+
+        // Menampilkan informasi tarif
         System.out.println("Total jarak rute: " + distance + " km");
         System.out.println("Tarif per km: Rp " + FARE_PER_KM);
         System.out.println("Total tarif perjalanan taksi: Rp " + totalFare);
