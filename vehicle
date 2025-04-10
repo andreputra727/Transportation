@@ -1,18 +1,21 @@
 package praktic.inheritance.transportation;
 
+// Kelas induk untuk kendaraan umum
 public class Vehicle {
-    private String name;
-    private int capacity;
-    private String route;
-    private int currentPassengers;
-    
+    private String name;                 // Nama kendaraan
+    private int capacity;               // Kapasitas maksimum penumpang
+    private String route;               // Rute perjalanan kendaraan
+    private int currentPassengers;      // Jumlah penumpang saat ini
+
+    // Konstruktor untuk menginisialisasi kendaraan
     public Vehicle(String name, int capacity, String route) {
         this.name = name;
         this.capacity = capacity;
         this.route = route;
-        this.currentPassengers = 0;
+        this.currentPassengers = 0; // Awalnya belum ada penumpang
     }
 
+    // Method untuk menaikkan penumpang ke dalam kendaraan
     public void boardPassengers(int count) {
         if (currentPassengers + count <= capacity) {
             currentPassengers += count;
@@ -23,6 +26,7 @@ public class Vehicle {
         System.out.println("Banyak penumpang: " + currentPassengers);
     }
 
+    // Method untuk menurunkan penumpang dari kendaraan
     public void dropPassengers(int count) {
         if (count <= currentPassengers) {
             currentPassengers -= count;
@@ -32,19 +36,24 @@ public class Vehicle {
         }
     }
 
+    // Method untuk memulai perjalanan kendaraan
     public void startJourney() {
         System.out.println(name + " memulai perjalanan di " + route);
     }
 
+    // Method untuk menghentikan perjalanan kendaraan
     public void stopJourney() {
         System.out.println(name + " mencapai tujuan akhir dan berhenti.");
     }
 
+    // Method untuk menghitung tarif (bisa dioverride di subclass)
     public void calculateFare() {
         System.out.println("Hitung tarif tidak tersedia untuk kendaraan umum.");
     }
 
+    // Getter untuk mengambil jumlah penumpang saat ini
     public int getCurrentPassenger() {
         return currentPassengers;
     }
 }
+
