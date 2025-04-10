@@ -6,35 +6,38 @@ import praktic.inheritance.transportation.Train;
 
 public class main {
     public static void main(String[] args) {
+        // Bus
         Bus bus = new Bus("Bus TransJakarta", 50, "Terminal A - Terminal B");
-        bus.startJourney();
-        bus.boardPassengers(30);
-        bus.boardPassengers(100);
-        bus.calculateFare(5);
-        bus.stopJourney();
-        bus.dropPassengers(50);
-        bus.dropPassengers(10);
+        bus.startJourney();                    // mulai jalan
+        bus.boardPassengers(30);               // naik 30 orang
+        bus.boardPassengers(100);              // coba naik 100 lagi (harusnya ditolak karena penuh)
+        bus.calculateFare(5);                  // hitung tarif untuk 5 halte
+        bus.stopJourney();                     // sampai tujuan
+        bus.dropPassengers(50);                // coba turunkan 50 penumpang (lebih dari yang ada)
+        bus.dropPassengers(10);                // turun lagi (padahal udah kosong)
 
         System.out.println("\n----------------------------------------------------------\n");
 
+        // Kereta
         Train train = new Train("Kereta Commuter Line", 200, "Stasiun Kota - Stasiun Pusat");
-        train.startJourney();
-        train.boardPassengers(150);
-        train.boardPassengers(300);
-        train.calculateFare();
-        train.stopJourney();
-        train.dropPassengers(150);
-        train.dropPassengers(50);     
+        train.startJourney();                  // mulai jalan
+        train.boardPassengers(150);            // naik 150 orang
+        train.boardPassengers(300);            // coba naik 300 lagi (melebihi kapasitas)
+        train.calculateFare();                 // hitung tarif tetap
+        train.stopJourney();                   // sampai tujuan
+        train.dropPassengers(150);             // turunkan 150 penumpang
+        train.dropPassengers(50);              // coba turunkan 50 lagi (padahal udah kosong)
 
         System.out.println("\n----------------------------------------------------------\n");
 
+        // Taksi
         Taxi taxi = new Taxi("Taksi BlueBird", 4, "Bandara - Hotel");
-        taxi.startJourney();
-        taxi.boardPassengers(3);
-        taxi.boardPassengers(3);
-        taxi.calculateFare(10);
-        taxi.stopJourney();
-        taxi.dropPassengers(3);
-        taxi.dropPassengers(2);
+        taxi.startJourney();                   // mulai jalan
+        taxi.boardPassengers(3);               // 3 orang naik
+        taxi.boardPassengers(3);               // coba tambah 3 orang lagi (harusnya ditolak)
+        taxi.calculateFare(10);                // hitung tarif untuk 10 km
+        taxi.stopJourney();                    // sampai tujuan
+        taxi.dropPassengers(3);                // turunkan 3 orang
+        taxi.dropPassengers(2);                // coba turunkan 2 lagi (udah kosong)
     }
 }
