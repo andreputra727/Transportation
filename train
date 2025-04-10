@@ -1,14 +1,22 @@
 package praktic.inheritance.transportation;
 
+// Kelas Train merupakan turunan dari kelas Vehicle
 public class Train extends Vehicle {
+    // Tarif tetap per penumpang untuk perjalanan kereta
     private static final int FIXED_FARE = 15000;
 
+    // Konstruktor untuk menginisialisasi objek Train
     public Train(String name, int capacity, String route) {
-        super(name, capacity, route);
+        super(name, capacity, route); // Memanggil konstruktor kelas induk (Vehicle)
     }
-    
+
+    // Override method calculateFare dari Vehicle untuk menghitung tarif tetap
+    @Override
     public void calculateFare() {
+        // Menghitung total tarif berdasarkan jumlah penumpang dan tarif tetap
         int totalFare = getCurrentPassenger() * FIXED_FARE;
+
+        // Menampilkan informasi tarif
         System.out.println("Tarif tetap per penumpang: Rp " + FIXED_FARE);
         System.out.println("Total tarif perjalanan kereta: Rp " + totalFare);
     }
