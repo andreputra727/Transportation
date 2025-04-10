@@ -1,14 +1,21 @@
 package praktic.inheritance.transportation;
 
+// Kelas Bus merupakan turunan dari kelas Vehicle
 public class Bus extends Vehicle {
+    // Konstanta tarif per pemberhentian (halte)
     private static final int FARE_PER_STOP = 3000;
 
+    // Konstruktor untuk menginisialisasi Bus, memanggil konstruktor superclass (Vehicle)
     public Bus(String name, int capacity, String route) {
         super(name, capacity, route);
     }
 
+    // Method khusus untuk menghitung tarif berdasarkan jumlah pemberhentian
     public void calculateFare(int stops) {
+        // Menghitung total tarif berdasarkan jumlah penumpang, tarif per halte, dan jumlah halte
         int totalFare = getCurrentPassenger() * FARE_PER_STOP * stops;
+        
+        // Menampilkan informasi tarif
         System.out.println("Total pemberhentian: " + stops);
         System.out.println("Tarif per halte: Rp " + FARE_PER_STOP);
         System.out.println("Total tarif perjalanan bus: Rp " + totalFare);
